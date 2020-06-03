@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'amount.js',
+        filename: 'tools.js',
         globalObject: 'this',        // 定义全局变量,兼容node和浏览器运行，避免出现"window is not defined"的情况
         libraryTarget: 'umd'         // 定义打包方式Universal Module Definition,同时支持在CommonJS、AMD和全局变量使用
     },
