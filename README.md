@@ -1,1 +1,3 @@
+实际工作中用到的一些工具函数，整理成一个工具包，便于后期直接使用和升级迭代，如有错误还请多多指教……
+
 [![npm](https://img.shields.io/npm/v/fn_tools)](https://www.npmjs.com/package/fn_tools)
