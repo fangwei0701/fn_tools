@@ -17,7 +17,7 @@ import {
  * @param {String}          math_type       round(默认), ceil, floor    设置decimals_place才生效
  * @param {String}          error_msg       错误信息(number不存在情况下)  默认返回--
  */
-export function numberFormate(
+export function numberFormat(
     number,
     decimal_place = "2",
     thousand_mark = ",",
@@ -74,4 +74,31 @@ export function numberTransform(
     const decimal = arabicDecimal(_decimal, _config, arabic_numberals.decimal);
 
     return `${integer}元` + (decimal || "整");
+}
+
+/**
+ * 日期格式化
+ * @param {Number} timestamp 
+ * @param {String} type 
+ * @param {String} mark 
+ */
+export function dateFormat(timestamp, type = '', mark) {
+    const date = new Date(+timestamp);
+
+    let year = date.getFullYear();      //年
+    let month = date.getMonth();        //月
+    let day = date.getDate();           //日
+    let hour = date.getHours();         //时
+    let min = date.getMinutes();        //分
+    let sec = date.getSeconds();        //秒
+
+    month = month < 10 ? `0${month}` : month;
+    day = day < 10 ? `0${day}` : day;
+    hour = hour < 10 ? `0${hour}` : hour;
+    min = min < 10 ? `0${min}` : min;
+    sec = sec < 10 ? `0${sec}` : sec;
+
+    const dateObj = {
+        
+    }
 }

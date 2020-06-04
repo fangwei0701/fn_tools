@@ -29,7 +29,7 @@ improt { fn_tools_name1, fn_tools_name2, …… } from 'fn_tools';
 number        | Number  String |        | 
 decimal_place | String         | 2      | 有效数位，若想要整数，直接传入0
 thousand_mark | String         | ,      | 千分符号，若传入为数值，做空处理
-math_type     | String         | round  | Math类型，round, ceil, floor  设置decimals_place才生效
+math_type     | String         | round  | Math类型，round, ceil, floor  decimals_place > 0才生效
 error_msg     | String         | --     | 数值不存在时的错误信息
 
 
