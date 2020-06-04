@@ -7,10 +7,10 @@ import {
     arabicInteger,
     arabicDecimal,
     arabicFourLevel,
-} from '../units/decimal';
+} from '../units/tool';
 
 /**
- * 数值格式化(金额)
+ * 数值格式化(金额 | 数值)
  * @param {Number|String}   number 
  * @param {String}          decimal_place   有效数位  默认保留两位有效数值
  * @param {String}          thousand_mark   千分符号  默认逗号(,) 
@@ -48,7 +48,7 @@ export function numberFormate(
 /**
  * 阿拉伯数字转换 (金额)
  * @param {Number|String}   number  数字[正整数]
- * @param {String}          type    文本类型,lower|upper,默认upper
+ * @param {String}          type    文本类型, lower|upper,默认upper
  */
 export function numberTransform(
     number,
