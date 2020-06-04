@@ -15,7 +15,7 @@ npm install fn_tools -s
 
 ##### 使用
 ```
-    improt { fn_tools_name1, fn_tools_name2, …… } from 'fn_tools';
+improt { fn_tools_name1, fn_tools_name2, …… } from 'fn_tools';
 ```
 
 
@@ -23,19 +23,22 @@ npm install fn_tools -s
 
 #### numberFormate
 
+主要应用对数值进行格式化，包括保留有效数值位数，以及涉及金额增加千分符
+
 参数          | 类型           | 默认值 | 备注
 ---           | ---            | ---    | ---
 number        | Number  String |        | 
 decimal_place | String         | 2      | 有效数位，若想要整数，直接传入0
 thousand_mark | String         | ,      | 千分符号，若传入为数值，做空处理
 math_type     | String         | round  | Math类型，round, ceil, floor  设置decimals_place才生效
-decimal_mark  | String         | .      | 小数点连接符号
 error_msg     | String         | --     | 数值不存在时的错误信息
 
 
 ### 阿拉伯数字转换 (金额)
 
 #### numberTransform
+
+主要应用与金额模块，需要对金额进行大写的情况
 
 参数   | 类型           | 默认值 | 备注
 ---    | ---            | ---    | ---

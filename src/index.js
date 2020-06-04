@@ -15,7 +15,6 @@ import {
  * @param {String}          decimal_place   有效数位  默认保留两位有效数值
  * @param {String}          thousand_mark   千分符号  默认逗号(,) 
  * @param {String}          math_type       round(默认), ceil, floor    设置decimals_place才生效
- * @param {String}          decimal_mark    小数点符号  默认(.) 
  * @param {String}          error_msg       错误信息(number不存在情况下)  默认返回--
  */
 export function numberFormate(
@@ -23,7 +22,6 @@ export function numberFormate(
     decimal_place = "2",
     thousand_mark = ",",
     math_type = "round",
-    decimal_mark = ".",
     error_msg = "--",
 ) {
     if (number === undefined || number === null || isNaN(number)) { return error_msg; }
@@ -41,7 +39,7 @@ export function numberFormate(
     // 小数部分
     const decimal = decimalFill(after, valid_place);
 
-    return valid_place ? `${integer}${decimal_mark}${decimal}` : `${integer}`;
+    return valid_place ? `${integer}.${decimal}` : `${integer}`;
 }
 
 
