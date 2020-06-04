@@ -3,7 +3,7 @@ import { math_type } from "./constConfig";
 /**
  * 千分符 
  * @param {Number} num  整数数值
- * @param {String} mark 千分符
+ * @param {String} mark 千分符号
  */
 export function thousandsMark(num, mark) {
     if (!mark) { return num }
@@ -68,7 +68,6 @@ export function arabicFourLevel(number, config) {
 
     return levels;
 }
-
 /**
  * 整数部分
  * @param {Array}   levels 
@@ -94,7 +93,6 @@ export function arabicInteger(levels, config) {
 
     return integer;
 }
-
 /**
  * 小数部分
  * @param {Array}   number 
