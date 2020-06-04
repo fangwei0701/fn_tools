@@ -20,7 +20,7 @@ improt { fn_tools_name1, fn_tools_name2, …… } from 'fn_tools';
 
 ### 数值格式化(金额 | 数值)
 
-#### numberFormate
+#### numberFormat
 
 主要应用对数值进行格式化，包括保留有效数值位数，以及涉及金额增加千分符
 
@@ -44,3 +44,14 @@ error_msg     | String         | --     | 数值不存在时的错误信息
 number | Number  String |        |
 type   | String         | upper  | 文本类型, lower (如：一 二 三), upper(壹, 贰, 叁)
 
+### 日期格式化 ()
+
+#### dateFormat
+
+主要应用对日期格式化，返回需要的类型
+
+参数      | 类型    | 默认值 | 备注
+---       | ---     | ---    | ---
+timestamp | Number  |        |
+type      | String  |        |
+mark      | String  | -      |
