@@ -82,7 +82,11 @@ export function numberTransform(
  * @param {String} type 
  * @param {String} mark 
  */
-export function dateFormat(timestamp, type = '', mark) {
+export function dateFormat(
+    timestamp,
+    type = '',
+    mark
+) {
     const date = new Date(+timestamp);
 
     let year = date.getFullYear();      //年
@@ -99,6 +103,6 @@ export function dateFormat(timestamp, type = '', mark) {
     sec = sec < 10 ? `0${sec}` : sec;
 
     const dateObj = {
-        
+
     }
 }
