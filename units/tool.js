@@ -109,3 +109,15 @@ export function arabicDecimal(number, config, decimalConfig) {
 
     return decimal;
 }
+
+
+/**
+ * 时间填充 【0-9】补充0
+ * @param {Array} times 
+ */
+export function timeFill(times) {
+    const new_times = times.map((item) => {
+        return item < 10 ? `0${item}` : item
+    });
+    return new_times;
+}

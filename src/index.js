@@ -7,6 +7,7 @@ import {
     arabicInteger,
     arabicDecimal,
     arabicFourLevel,
+    timeFill,
 } from '../units/tool';
 
 /**
@@ -88,21 +89,48 @@ export function dateFormat(
     mark
 ) {
     const date = new Date(+timestamp);
-
-    let year = date.getFullYear();      //年
-    let month = date.getMonth();        //月
-    let day = date.getDate();           //日
-    let hour = date.getHours();         //时
-    let min = date.getMinutes();        //分
-    let sec = date.getSeconds();        //秒
-
-    month = month < 10 ? `0${month}` : month;
-    day = day < 10 ? `0${day}` : day;
-    hour = hour < 10 ? `0${hour}` : hour;
-    min = min < 10 ? `0${min}` : min;
-    sec = sec < 10 ? `0${sec}` : sec;
+    const year = date.getFullYear();      //年
+    const month = date.getMonth();        //月
+    const day = date.getDate();           //日
+    const hour = date.getHours();         //时
+    const min = date.getMinutes();        //分
+    const sec = date.getSeconds();        //秒
+    const [m, d, h, mi, s] = timeFill([month, day, hour, min, sec]);
 
     const dateObj = {
+        'YY': `${year}`,
+        'YY-MM': `${year}${mark}${m}`,
+        'YY-MM-DD': `${year}${mark}${m}${mark}${d}`,
+        'YY-MM-DD-HMS': `${year}${mark}${m}${mark}${d} ${h}:${mi}:${s} `,
+        'MM-DD': `${m}${mark}${d}`,
+        'HMS': `${h}:${mi}:${s}`,
+        'HM': `${h}:${mi}`,
+        'MS': `${mi}:${s}`,
+    };
 
+    return dateObj[type];
+}
+
+/**
+ * 日期比较
+ * @param {Number} startDate 
+ * @param {Number} endDate
+ * @param {Number} deviceDate
+ */
+export function dateCompare(startDate, endDate, deviceDate) {
+    let diff;
+    if (deviceDate) {
+        diff = endDate - (+ new Date()) - startDate + deviceDate;
+    } else {
+        diff = endDate - startDate;
     }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60 * 24)) % 24);
+    const m = Math.floor((diff / 1000 / 60) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    const [days, hours, minutes, seconds] = timeFill([d, h, m, s]);
+
+    return { diff, days, hours, minutes, seconds };
 }
