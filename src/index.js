@@ -34,7 +34,7 @@ export function numberFormat(
     const valid_place = Number(decimal_place) ? Math.abs(decimal_place) : 0;
     const valid_num = newToFixed(math_type, _number, valid_place);
     const [before = '0', after = '0'] = strToArr(valid_num, '.');
-    // 整数部分npm
+    // 整数部分
     const integer = thousandsMark(before, _mark);
     // 小数部分
     const decimal = decimalFill(after, valid_place);

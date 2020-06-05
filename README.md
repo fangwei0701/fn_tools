@@ -44,7 +44,7 @@ error_msg     | String         | --     | 数值不存在时的错误信息
 number | Number  String |        |
 type   | String         | upper  | 文本类型, lower (如：一 二 三), upper(壹, 贰, 叁)
 
-### 日期格式化
+### 日期格式化（暂未完成）
 
 #### dateFormat
 
