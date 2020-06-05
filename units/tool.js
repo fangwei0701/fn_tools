@@ -110,14 +110,26 @@ export function arabicDecimal(number, config, decimalConfig) {
     return decimal;
 }
 
-
+/**
+ * 日期拆分
+ * @param {String} date 
+ */
+export function dateSplit(date) {
+    const year = date.getFullYear();      //年
+    const month = date.getMonth();        //月
+    const day = date.getDate();           //日
+    const hour = date.getHours();         //时
+    const min = date.getMinutes();        //分
+    const sec = date.getSeconds();        //秒
+    return { year, month, day, hour, min, sec };
+}
 /**
  * 时间填充 【1-9】补充0
  * @param {Array} times 
  */
 export function timeFill(times) {
     const new_times = times.map((item) => {
-        return item < 10 ? `0${item}` : item
+        return item < 10 ? `0${item}` : item;
     });
     return new_times;
 }

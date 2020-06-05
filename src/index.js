@@ -8,6 +8,7 @@ import {
     arabicDecimal,
     arabicFourLevel,
     timeFill,
+    dateSplit,
 } from '../units/tool';
 
 /**
@@ -89,14 +90,8 @@ export function dateFormat(
     mark
 ) {
     const date = new Date(+timestamp);
-    const year = date.getFullYear();      //年
-    const month = date.getMonth();        //月
-    const day = date.getDate();           //日
-    const hour = date.getHours();         //时
-    const min = date.getMinutes();        //分
-    const sec = date.getSeconds();        //秒
+    const { year, month, day, hour, min, sec } = dateSplit(date);
     const [m, d, h, mi, s] = timeFill([month, day, hour, min, sec]);
-
     const dateObj = {
         'YY': `${year}`,
         'YY-MM': `${year}${mark}${m}`,
@@ -129,7 +124,6 @@ export function dateCompare(startDate, endDate, deviceDate) {
     const h = Math.floor((diff / (1000 * 60 * 60 * 24)) % 24);
     const m = Math.floor((diff / 1000 / 60) % 60);
     const s = Math.floor((diff / 1000) % 60);
-
     const [days, hours, minutes, seconds] = timeFill([d, h, m, s]);
 
     return { diff, days, hours, minutes, seconds };
