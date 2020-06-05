@@ -125,7 +125,7 @@ export function dateCompare(
     }
 
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60 * 24)) % 24);
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const m = Math.floor((diff / 1000 / 60) % 60);
     const s = Math.floor((diff / 1000) % 60);
     const [days, hours, minutes, seconds] = timeFill([d, h, m, s]);
