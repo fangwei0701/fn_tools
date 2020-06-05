@@ -112,7 +112,11 @@ export function dateFormat(
  * @param {Number} endDate
  * @param {Number} deviceDate
  */
-export function dateCompare(startDate, endDate, deviceDate) {
+export function dateCompare(
+    startDate,
+    endDate,
+    deviceDate
+) {
     let diff;
     if (deviceDate) {
         diff = endDate - (+ new Date()) - startDate + deviceDate;
