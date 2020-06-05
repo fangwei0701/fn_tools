@@ -39,7 +39,7 @@ error_msg     | String         | --     | 数值不存在时的错误信息
 参数   | 类型           | 默认值 | 备注
 ---    | ---            | ---    | ---
 number | Number  String |        |
-type   | String         | upper  | 文本类型, lower (如：一 二 三), upper(壹, 贰, 叁)
+type   | String         | upper  | 文本类型， lower (如：一 二 三), upper(壹, 贰, 叁)
 
 ### 日期格式化
 
@@ -49,8 +49,8 @@ type   | String         | upper  | 文本类型, lower (如：一 二 三), uppe
 
 参数      | 类型    | 默认值 | 备注
 ---       | ---     | ---      | ---
-timestamp | Number  |          | 必须为日期时间戳
-type      | String  | YY-MM-DD | 返回格式, YY(年) YY-MM(年月) YY-MM-DD(年月日) YY-MM-DD-HMS(年月日时分秒) MM-DD(月日) HMS(时分秒) HM(时分) MS(分秒)
+timestamp | Number  |          | 日期时间戳
+type      | String  | YY-MM-DD | 返回格式，YY(年) YY-MM(年月) YY-MM-DD(年月日) YY-MM-DD-HMS(年月日时分秒) MM-DD(月日) HMS(时分秒) HM(时分) MS(分秒)
 mark      | String  | -        | 连接符号
 
 ### 日期差
