@@ -1,6 +1,6 @@
 {
     "name": "fn_tools",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "common tool function",
     "license": "MIT",
     "repository": "fangwei0701/fn_tools",
@@ -16,6 +16,9 @@
     "scripts": {
         "build": "webpack"
     },
+    "files": [
+        "dist"
+    ],
     "dependencies": {
         "babel-loader": "^8.1.0",
         "terser-webpack-plugin": "^3.0.2",
