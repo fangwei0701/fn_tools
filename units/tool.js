@@ -112,7 +112,7 @@ export function arabicDecimal(number, config, decimalConfig) {
 
 
 /**
- * 时间填充 【0-9】补充0
+ * 时间填充 【1-9】补充0
  * @param {Array} times 
  */
 export function timeFill(times) {

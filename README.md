@@ -11,12 +11,10 @@ or
 npm install fn_tools -s
 ```
 
-
 ##### 使用
 ```
 improt { fn_tools_name1, fn_tools_name2, …… } from 'fn_tools';
 ```
-
 
 ### 数值格式化(金额 | 数值)
 
@@ -32,7 +30,6 @@ thousand_mark | String         | ,      | 千分符号，若传入为数值，�
 math_type     | String         | round  | Math类型，round, ceil, floor  decimals_place > 0才生效
 error_msg     | String         | --     | 数值不存在时的错误信息
 
-
 ### 阿拉伯数字转换 (金额)
 
 #### numberTransform
@@ -44,14 +41,26 @@ error_msg     | String         | --     | 数值不存在时的错误信息
 number | Number  String |        |
 type   | String         | upper  | 文本类型, lower (如：一 二 三), upper(壹, 贰, 叁)
 
-### 日期格式化（暂未完成）
+### 日期格式化
 
 #### dateFormat
 
 主要应用对日期格式化，返回需要的类型
 
 参数      | 类型    | 默认值 | 备注
----       | ---     | ---    | ---
-timestamp | Number  |        |
-type      | String  |        |
-mark      | String  | -      |
+---       | ---     | ---      | ---
+timestamp | Number  |          | 必须为日期时间戳
+type      | String  | YY-MM-DD | 返回格式, YY(年) YY-MM(年月) YY-MM-DD(年月日) YY-MM-DD-HMS(年月日时分秒) MM-DD(月日) HMS(时分秒) HM(时分) MS(分秒)
+mark      | String  | -        | 连接符号
+
+### 日期差
+
+#### dateCompare
+
+主要应用两个日期比较，计算两个日期的差额
+
+参数       | 类型    | 默认值 | 备注
+---        | ---     | ---      | ---
+startDate  | Number  |          | 开始日期，必时间戳
+endDate    | Number  |          | 结束日期，必时间戳
+deviceDate | Number  |          | 设备日期（本地日期），必时间戳
